@@ -1,3 +1,17 @@
+import pandas as pd
+
+class Dataset:
+    """
+    Base class for downloading dataset.
+
+    Args:
+        root: Root directory of dataset
+    """
+    def __init__(self, root, cache = True):
+        self.root = root
+        if cache:
+            self.cache()
+
 def cache(func):
     def wrapped_func(*args, **kwargs):
         from datetime import date
